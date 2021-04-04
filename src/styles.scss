@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+/**
+
+=========================================================
+* Volt - Bootstrap 5 Admin Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2020 Themesberg (https://www.themesberg.com)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+**/
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap');
+
+// Bootstrap mixins and functions
+@import "~bootstrap/scss/bootstrap";
+// @import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
+// @import "/node_modules/bootstrap/scss/mixins";
+// @import "/node_modules/bootstrap/scss/functions";
+
+// Change variables here
+@import "app/shared/styles/variables";
+
+// Bootstrap
+// @import "/node_modules/bootstrap/scss/bootstrap";
+
+// Vendor
+@import "app/shared/styles/vendor";
+
+// volt mixins & functions
+@import "app/shared/styles/mixins";
+@import "app/shared/styles/functions";
+
+// Utilities
+@import "app/shared/styles/reboot";
+@import "app/shared/styles/utilities";
+
+// Layout
+@import "app/shared/styles/layout";
+
+// Components
+// @import "app/shared/styles/components";
+
+// write your custom styles here!
