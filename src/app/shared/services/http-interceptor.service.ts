@@ -2,12 +2,11 @@ import { HttpEvent, HttpHandler, HttpRequest, HttpErrorResponse } from "@angular
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { tap } from 'rxjs/operators';
-import { Router, RouterLink } from '@angular/router';
 
 @Injectable()
 export class HttpInterceptorService {
 
-  constructor(private router: RouterLink) { }
+  constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 

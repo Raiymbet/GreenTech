@@ -32,10 +32,11 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log("Sign in submit....");
     this.loginService.login(this.formgroup.value).subscribe(res => {
       this.storageService.setToken(res.token);
       this.storageService.setUserInfo(res.user);
-      // this.router.navigate(['main'], { });
+      this.router.navigate(['main'], { });
     }, (err: HttpErrorResponse) => {
       alert(err.message);
     });

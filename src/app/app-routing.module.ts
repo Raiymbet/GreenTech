@@ -49,10 +49,10 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [ 
       {
-        path: 'dashboards',
+        path: '',
         component: DashboardsComponent,
       },
       {
@@ -68,23 +68,7 @@ const routes: Routes = [
         component: WorkersComponent
       }
     ]
-  },
-  // {
-  //   path: 'dashboards',
-  //   component: DashboardsComponent,
-  // },
-  // {
-  //   path: 'users', 
-  //   component: UsersComponent
-  // },
-  // {
-  //   path: 'brigadiers', 
-  //   component: BrigadiersComponent
-  // },
-  // {
-  //   path: 'workers', 
-  //   component: WorkersComponent
-  // }
+  }
 ];
 
 @NgModule({

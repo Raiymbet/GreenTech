@@ -18,8 +18,11 @@ import { TopbarComponent } from './partials/topbar/topbar.component';
 import { NgNavComponent } from './partials/ng-nav/ng-nav.component';
 import { NgFooterComponent } from './partials/ng-footer/ng-footer.component';
 import { MainComponent } from './pages/main/main.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from './shared/services/http-interceptor.service';
+import { BaseService } from './shared/services/base.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -41,9 +44,11 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   exports: [
@@ -52,7 +57,14 @@ import { HttpClientModule } from '@angular/common/http';
     TopbarComponent,
     SidenavComponent
   ],
-  providers: [],
+  providers: [
+    BaseService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
