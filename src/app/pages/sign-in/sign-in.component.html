@@ -9,13 +9,13 @@
                         <div class="text-center text-md-center mb-4 mt-md-0">
                             <h1 class="mb-0 h3">Sign in to our platform</h1>
                         </div>
-                        <form action="#" class="mt-4">
+                        <form class="mt-4" [formGroup]="formgroup" (ngSubmit)="onSubmit()">
                             <!-- Form -->
                             <div class="form-group mb-4">
-                                <label for="email">Your Email</label>
+                                <label for="username">Your login</label>
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1"><span class="fas fa-envelope"></span></span>
-                                    <input type="email" class="form-control" placeholder="example@company.com" id="email" autofocus required>
+                                    <input type="text" class="form-control" placeholder="username" id="username" autofocus required name="username" formControlName="username">
                                 </div>  
                             </div>
                             <!-- End of Form -->
@@ -25,7 +25,7 @@
                                     <label for="password">Your Password</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2"><span class="fas fa-unlock-alt"></span></span>
-                                        <input type="password" placeholder="Password" class="form-control" id="password" required>
+                                        <input type="password" placeholder="Password" class="form-control" id="password" required name="password" formControlName="password">
                                     </div>  
                                 </div>
                                 <!-- End of Form -->

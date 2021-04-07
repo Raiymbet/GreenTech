@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrigadiersComponent } from './pages/brigadiers/brigadiers.component';
 import { DashboardsComponent } from './pages/dashboards/dashboards.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { MainComponent } from './pages/main/main.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
@@ -47,9 +48,13 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    component: DashboardsComponent,
-    canActivate: [AuthGuard],
+    component: MainComponent,
+    // canActivate: [AuthGuard],
     children: [ 
+      {
+        path: 'dashboards',
+        component: DashboardsComponent,
+      },
       {
         path: 'users', 
         component: UsersComponent
@@ -63,7 +68,23 @@ const routes: Routes = [
         component: WorkersComponent
       }
     ]
-  }
+  },
+  // {
+  //   path: 'dashboards',
+  //   component: DashboardsComponent,
+  // },
+  // {
+  //   path: 'users', 
+  //   component: UsersComponent
+  // },
+  // {
+  //   path: 'brigadiers', 
+  //   component: BrigadiersComponent
+  // },
+  // {
+  //   path: 'workers', 
+  //   component: WorkersComponent
+  // }
 ];
 
 @NgModule({

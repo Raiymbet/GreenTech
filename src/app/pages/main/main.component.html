@@ -1,0 +1,32 @@
+<app-ng-nav></app-ng-nav>
+
+<div class="container-fluid bg-soft">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- @@include('./dashboard/_sidenav.html', {
+                "path": "../..",
+                "page": "overview",
+                "page_group": "dashboard"
+            }) -->
+            <app-sidenav></app-sidenav>
+        
+            <main class="content">
+
+                <app-topbar></app-topbar>
+
+                
+                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+                <router-outlet></router-outlet>
+
+                
+                <!-- @@include('./dashboard/_footer.html', {
+                    "path": "../..",
+                    "classes": "text-dark"
+                }) -->
+                <app-ng-footer></app-ng-footer>
+            </main>
+        </div>
+    </div>
+</div>

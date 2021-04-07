@@ -9,13 +9,21 @@
                         <div class="text-center text-md-center mb-4 mt-md-0">
                             <h1 class="mb-0 h3">Create an account</h1>
                         </div>
-                        <form action="#">
+                        <form [formGroup]="formgroup" (ngSubmit)="onSubmit()">
                             <!-- Form -->
                             <div class="form-group mb-4">
                                 <label for="email">Your Email</label>
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                    <input type="email" class="form-control" placeholder="example@company.com" id="email" autofocus required>
+                                    <input type="email" class="form-control" placeholder="example@company.com" id="email" autofocus required name="email" formControlName="email">
+                                </div>  
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="username">Username</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                    <input type="text" class="form-control" placeholder="username" id="username" autofocus required name="username" formControlName="username">
                                 </div>  
                             </div>
                             <!-- End of Form -->
@@ -25,7 +33,7 @@
                                     <label for="password">Your Password</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon4"><span class="fas fa-unlock-alt"></span></span>
-                                        <input type="password" placeholder="Password" class="form-control" id="password" required>
+                                        <input type="password" placeholder="Password" class="form-control" id="password" required name="password1" formControlName="password1">
                                     </div>  
                                 </div>
                                 <!-- End of Form -->
@@ -34,7 +42,7 @@
                                     <label for="confirm_password">Confirm Password</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon5"><span class="fas fa-unlock-alt"></span></span>
-                                        <input type="password" placeholder="Confirm Password" class="form-control" id="confirm_password" required>
+                                        <input type="password" placeholder="Confirm Password" class="form-control" id="confirm_password" required name="password2" formControlName="password2">
                                     </div>  
                                 </div>
                                 <!-- End of Form -->

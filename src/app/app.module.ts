@@ -13,12 +13,13 @@ import { UsersComponent } from './pages/users/users.component';
 import { BrigadiersComponent } from './pages/brigadiers/brigadiers.component';
 import { WorkersComponent } from './pages/workers/workers.component';
 import { DashboardsComponent } from './pages/dashboards/dashboards.component';
-import { FooterComponent } from './partials/footer/footer.component';
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
 import { TopbarComponent } from './partials/topbar/topbar.component';
-import { NavComponent } from './partials/nav/nav.component';
 import { NgNavComponent } from './partials/ng-nav/ng-nav.component';
 import { NgFooterComponent } from './partials/ng-footer/ng-footer.component';
+import { MainComponent } from './pages/main/main.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,16 +34,23 @@ import { NgFooterComponent } from './partials/ng-footer/ng-footer.component';
     BrigadiersComponent,
     WorkersComponent,
     DashboardsComponent,
-    FooterComponent,
     SidenavComponent,
     TopbarComponent,
-    NavComponent,
     NgNavComponent,
-    NgFooterComponent
+    NgFooterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    NgNavComponent,
+    NgFooterComponent,
+    TopbarComponent,
+    SidenavComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
